@@ -54,7 +54,7 @@ body {
   background-color: black;
   position: absolute;
   z-index: 10;
-  top: 55%; /* Center vertically */
+  top: 55%; /* Adjusted for dynamic positioning */
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.9;
@@ -100,35 +100,26 @@ body {
   box-shadow: 0 0 1rem rgb(167, 137, 4);
 }
 
+/* Media queries to adjust size */
 @media (max-width: 48em) {
   .s-box {
-    top: 55%; /* Keep above the title */
-    width: 85vw; /* Slightly larger width */
+    width: 75vw; /* Slightly larger width */
+    padding: calc(1rem * 0.75); /* Reduce padding by 25% */
+    top: 50%; /* Keep it centered */
   }
 }
 
 @media (max-width: 40.625em) {
   .s-box {
-    width: 90vw; /* More fluid width */
+    width: 70vw; /* Further reduce width */
+    top: 50%; /* Keep it centered */
+  }
+}
+
+@media (max-width: 26.25em) {
+  .s-box {
+    width: 85vw; /* Slightly larger width for small screens */
     top: 55%; /* Keep it above the title */
-  }
-}
-
-@media (max-width: 40.625em) {
-  .s-box input {
-    font-size: medium;
-  }
-}
-
-@media (max-width: 26.25em) {
-  .s-box {
-    width: 95vw; /* Full width on very small screens */
-    top: 60%; /* Center vertically */
-  }
-}
-@media (max-width: 26.25em) {
-  .s-box input {
-    font-size: medium;
   }
 }
 
