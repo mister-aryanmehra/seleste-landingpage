@@ -231,6 +231,7 @@ body {
 .s-box button:hover {
   background-color: white;
   border: 2px solid black;
+  color:black
 }
 
 .s-box button:focus {
