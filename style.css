@@ -1,0 +1,393 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #272a29;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  font-size: 16px;
+}
+
+.stars,
+.sec-color,
+.tert-color,
+.quart-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.stars {
+  color: white;
+  opacity: 1;
+  z-index: 3;
+}
+
+.sec-color {
+  background-image: url("https://live.staticflickr.com/65535/52259221868_53dae692b6_h.jpg");
+  opacity: 0.07;
+  z-index: 1;
+}
+
+.tert-color {
+  background-image: url("https://wallpapers.com/images/hd/constellations-6002-x-3737-wallpaper-1o6h61txs9ts5suw.jpg");
+  opacity: 0.05;
+  z-index: 2;
+}
+
+.quart-color {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/154/97/280/nebula-4k-ultra-hd-wallpaper-preview.jpg");
+  background-size: cover;
+  opacity: 0.03;
+  z-index: 2;
+}
+
+.title {
+  width: 18rem;
+}
+
+.stars::before,
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 0.125rem;
+  height: 0.125rem;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 6.25rem 12.5rem white, 12.5rem 25rem white, 18.75rem 37.5rem white,
+    25rem 50rem white, 31.25rem 62.5rem white;
+  animation: blink 2s infinite ease-in-out alternate;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  10% {
+    opacity: 1;
+  }
+}
+
+.star {
+  position: absolute;
+  width: 0.15rem;
+  height: 0.15rem;
+  background: white;
+  border-radius: 50%;
+  animation: blink 2s infinite ease-in-out alternate;
+}
+
+.shooting-star-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 0.1875rem;
+  height: 9.375rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(0.0625rem);
+  transform-origin: left center;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0) rotate(120deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(100vw, 100vh) rotate(120deg);
+    opacity: 0;
+  }
+}
+
+.scorpio-image-container,
+.const-image-container {
+  position: absolute;
+  transform: translateY(-50%);
+  opacity: 0.2;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scorpio-image-container {
+  left: 5vw;
+  top: 45vh;
+  z-index: 15;
+}
+
+.scorpio-image {
+  width: 12.5rem;
+  animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0.625rem, -0.625rem);
+  }
+  50% {
+    transform: translate(-0.625rem, 0.625rem);
+  }
+  75% {
+    transform: translate(-0.625rem, -0.625rem);
+  }
+}
+
+.scorpio-image-container.active {
+  opacity: 1;
+}
+
+.scorpio-image.active {
+  transform: scale(2);
+}
+
+@media (max-width: 48em) {
+  .scorpio-image-container {
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+}
+
+@media (max-width: 40.625em) {
+  .scorpio-image-container {
+    left: 50%;
+    top: calc(100% - 3.125rem);
+    transform: translate(-50%, -50%);
+  }
+
+  .scorpio-image {
+    width: 9.375rem;
+  }
+
+  .s-box {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 26.25em) {
+  .scorpio-image {
+    width: 8.125rem;
+  }
+
+  .scorpio-image-container {
+    top: calc(100% - 12.5rem);
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .s-box {
+    width: 90vw;
+  }
+}
+
+.const-image-container {
+  right: 5vw;
+  top: 45vh;
+  z-index: 15;
+}
+
+.const-image {
+  width: 15rem;
+  animation: float 10s infinite ease-in-out;
+}
+
+.const-image-container.active {
+  opacity: 1;
+}
+
+.const-image.active {
+  transform: scale(2);
+}
+
+@media (max-width: 48em) {
+  .const-image-container {
+    right: 50%;
+    top: 60%;
+    transform: translate(50%, -50%);
+    display: none;
+  }
+}
+
+@media (max-width: 40.625em) {
+  .const-image-container {
+    right: 50%;
+    top: calc(100% - 3.125rem);
+    transform: translate(50%, -50%);
+  }
+
+  .const-image {
+    width: 9.375rem;
+  }
+}
+
+@media (max-width: 26.25em) {
+  .const-image {
+    width: 8.125rem;
+  }
+
+  .const-image-container {
+    top: calc(100% - 12.5rem);
+    right: 50%;
+    transform: translate(50%, 0);
+  }
+}
+
+.s-box {
+  background-color: black;
+  position: absolute;
+  z-index: 10;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.9375rem;
+  border: 0.25rem solid transparent;
+  box-shadow: 0 0 1.25rem rgba(0, 68, 105, 0.5);
+  overflow: hidden;
+  font-weight: 600;
+  background: radial-gradient(
+      circle at center,
+      rgba(0, 34, 51, 0.1),
+      rgba(0, 34, 51, 0) 50%
+    ),
+    radial-gradient(
+      circle at top left,
+      rgba(23, 34, 42, 0.7),
+      rgba(23, 34, 42, 0) 60%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(55, 68, 78, 0.7),
+      rgba(55, 68, 78, 0) 60%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(28, 32, 40, 0.7),
+      rgba(28, 32, 40, 0) 60%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(45, 60, 75, 0.7),
+      rgba(45, 60, 75, 0) 60%
+    );
+  background-blend-mode: screen;
+  color: #e0e0e0;
+}
+
+.s-box:hover {
+  box-shadow: 0 0 1.875rem rgba(0, 34, 51, 0.7);
+}
+
+.s-box:focus {
+  outline: none;
+  box-shadow: 0 0 2.1875rem rgba(0, 68, 105, 1);
+}
+
+.s-box input {
+  background-color: #202020;
+  color: #e0e0e0;
+  padding: 0.625rem;
+  border: none;
+  border-radius: 0.3125rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.s-box input::placeholder {
+  color: #b0b0b0;
+}
+
+.s-box {
+  width: 80vw;
+  max-width: 25rem;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 0.9375rem;
+  background-color: #1a1a1a;
+  border: 0.1875rem solid rgba(0, 68, 105, 1);
+  box-shadow: 0 0 1.5rem rgba(0, 68, 105, 0.5);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  color: #f0f0f0;
+}
+
+.s-box:hover {
+  border-color: rgba(0, 102, 153, 1);
+  box-shadow: 0 0 2rem rgba(0, 102, 153, 0.7);
+}
+
+.s-box input {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.3125rem;
+  width: 100%;
+  font-size: 0.8rem;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.s-box input:focus {
+  background-color: #333333;
+  outline: none;
+  box-shadow: 0 0 0.9375rem rgba(0, 68, 105, 0.9);
+}
+
+.s-box input::placeholder {
+  color: #a0a0a0;
+}
+
+.s-box button {
+  margin-top: 0.625rem;
+  padding: 1rem;
+  width: 50%;
+  background-color: #004466;
+  border: none;
+  border-radius: 0.3125rem;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.s-box button:hover {
+  background-color: #005577;
+}
+
+.s-box button:focus {
+  outline: none;
+  box-shadow: 0 0 1rem rgba(0, 68, 105, 1);
+}
+
+button:hover {
+  border: 2px solid white;
+}
