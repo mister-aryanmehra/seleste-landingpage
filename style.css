@@ -63,7 +63,7 @@ body {
   border-radius: 0.9375rem;
   width: 80vw; /* Fluid width */
   max-width: 25rem; /* Control max width */
-  box-shadow: 0 0 1.25rem rgba(0, 68, 105, 0.5);
+  box-shadow: 0 0 1.25rem rgba(206, 186, 75, 0.5);
   height: auto; /* Allow height to adjust based on content */
 }
 
@@ -97,7 +97,7 @@ body {
 
 .s-box button:focus {
   outline: none;
-  box-shadow: 0 0 1rem rgba(0, 68, 105, 1);
+  box-shadow: 0 0 1rem rgb(167, 137, 4);
 }
 
 @media (max-width: 48em) {
