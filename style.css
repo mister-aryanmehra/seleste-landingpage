@@ -448,7 +448,7 @@ body {
   background-color: black;
   position: absolute;
   z-index: 10;
-  top: 60%; /* Adjusted from 55% to ensure space from title */
+  top: 55%; /* Adjusted from 55% to ensure space from title */
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.9;
@@ -487,20 +487,20 @@ body {
 
 @media (max-width: 48em) {
   .s-box {
-    top: 65%; /* Adjust positioning for smaller screens */
+    top: 55%; /* Adjust positioning for smaller screens */
   }
 }
 
 @media (max-width: 40.625em) {
   .s-box {
     width: 90vw; /* More fluid width */
-    top: 60%; /* Adjust positioning further */
+    top: 55%; /* Adjust positioning further */
   }
 }
 
 @media (max-width: 26.25em) {
   .s-box {
     width: 95vw; /* Full width on very small screens */
-    top: 45%; /* Further adjust positioning */
+    top: 55%; /* Further adjust positioning */
   }
 }
