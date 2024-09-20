@@ -467,7 +467,8 @@ body {
   border: none;
   border-radius: 0.3125rem;
   width: 100%;
-  font-size: 0.6rem;
+  font-size: 0.6git status 
+  rem;
 }
 
 .s-box button {
@@ -500,6 +501,6 @@ body {
 @media (max-width: 26.25em) {
   .s-box {
     width: 95vw; /* Full width on very small screens */
-    top: 55%; /* Further adjust positioning */
+    top: 45%; /* Further adjust positioning */
   }
 }
