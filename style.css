@@ -114,10 +114,21 @@ body {
   }
 }
 
+@media (max-width: 40.625em) {
+  .s-box input {
+    font-size: medium;
+  }
+}
+
 @media (max-width: 26.25em) {
   .s-box {
     width: 95vw; /* Full width on very small screens */
-    top: 50%; /* Center vertically */
+    top: 60%; /* Center vertically */
+  }
+}
+@media (max-width: 26.25em) {
+  .s-box input {
+    font-size: medium;
   }
 }
 
