@@ -1,7 +1,4 @@
 const starContainer = document.querySelector(".stars");
-const shootingStarContainer = document.querySelector(".shooting-star-container");
-
-let lastVisibleTime = performance.now();
 
 function createStar() {
   const star = document.createElement("div");
@@ -15,56 +12,6 @@ function createStar() {
 for (let i = 0; i < 700; i++) {
   createStar();
 }
-
-function createShootingStar() {
-  const shootingStar = document.createElement("div");
-  shootingStar.classList.add("shooting-star");
-
-  const startX = Math.random() * window.innerWidth;
-  const startY = (Math.random() * window.innerHeight) / 2;
-  const endX = startX + Math.random() * 400 - 200;
-  const endY = window.innerHeight + 20;
-
-  const deltaX = endX - startX;
-  const deltaY = endY - startY;
-  const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-
-  shootingStar.style.left = `${startX}px`;
-  shootingStar.style.top = `${startY}px`;
-  shootingStar.style.transform = `rotate(${angle}deg)`;
-
-  shootingStarContainer.appendChild(shootingStar);
-  shootingStar.style.animation = `shoot 4s ease-in-out forwards`;
-
-  shootingStar.addEventListener("animationend", () => {
-    shootingStar.remove();
-  });
-}
-
-function shootingStarLoop() {
-  createShootingStar();
-  const nextStarIn = Math.random() * 3000 + 1500;
-  setTimeout(shootingStarLoop, nextStarIn);
-}
-
-shootingStarLoop();
-
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") {
-    const currentTime = performance.now();
-    const elapsedTime = (currentTime - lastVisibleTime) / 1000;
-    const starsPerInterval = 1 / ((Math.random() * 3000 + 1500) / 1000);
-    const starsToCreate = Math.floor(elapsedTime * starsPerInterval);
-
-    for (let i = 0; i < starsToCreate; i++) {
-      setTimeout(createStar, Math.random() * 2000);
-    }
-
-    lastVisibleTime = currentTime;
-  } else {
-    lastVisibleTime = performance.now();
-  }
-});
 
 const scorpioImageContainer = document.querySelector(".scorpio-image-container");
 const constImageContainer = document.querySelector(".const-image-container");
