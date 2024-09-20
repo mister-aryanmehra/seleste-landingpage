@@ -9,121 +9,57 @@ body {
   font-size: 16px;
 }
 
-.stars,
-.sec-color,
-.tert-color,
-.quart-color {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
 .stars {
   color: white;
   opacity: 1;
   z-index: 3;
 }
 
-.sec-color {
-  background-image: url("https://live.staticflickr.com/65535/52259221868_53dae692b6_h.jpg");
-  opacity: 0.07;
-  z-index: 1;
-}
-
-.tert-color {
-  background-image: url("https://wallpapers.com/images/hd/constellations-6002-x-3737-wallpaper-1o6h61txs9ts5suw.jpg");
-  opacity: 0.05;
-  z-index: 2;
-}
-
-.quart-color {
-  background-image: url("https://c4.wallpaperflare.com/wallpaper/154/97/280/nebula-4k-ultra-hd-wallpaper-preview.jpg");
-  background-size: cover;
-  opacity: 0.03;
-  z-index: 2;
-}
-
 .s-box {
-  background-color: black;
+  background-color: transparent;
   position: absolute;
   z-index: 10;
-  top: 50%; /* Adjusted for dynamic positioning */
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 1;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 1rem;
   border-radius: 0.9375rem;
-  width: 80vw; /* Fluid width */
-  max-width: 25rem; /* Control max width */
-  box-shadow: 0 0 1.25rem rgba(12, 90, 104, 0.5);
-  height: auto; /* Allow height to adjust based on content */
+  width: 80vw;
+  max-width: 40rem;
+  box-shadow: none;
+  height: auto;
+  text-align: center;
 }
 
 .s-box input {
   background-color: #202020;
-  color: #e0e0e0; /* Keep this light color */
+  color: #e0e0e0;
   padding: 0.625rem;
   border: none;
   border-radius: 0.3125rem;
-  width: 100%;
-  font-size: 0.875rem; /* Adjust if necessary */
+  width: 20rem;
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
 }
 
 .s-box button {
   margin-top: 0.625rem;
-  padding: 1rem;
-  width: 50%;
+  padding: 0.75rem;
+  width: 40%; /* Make the button wider */
+  max-width: 200px; /* Control max width */
   background-color: black;
   border: 2px solid white;
   border-radius: 0.3125rem;
   color: white;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.s-box button:hover {
-  background-color: #005577;
-}
-
-.s-box button:focus {
-  outline: none;
-  box-shadow: 0 0 1rem rgb(167, 137, 4);
-}
-
-/* Media queries to adjust size */
-@media (max-width: 48em) {
-  .s-box {
-    width: 75vw; /* Slightly larger width */
-    padding: calc(1rem * 0.75); /* Reduce padding by 25% */
-    top: 50%; /* Keep it centered */
-  }
-}
-
-@media (max-width: 40.625em) {
-  .s-box {
-    width: 70vw; /* Further reduce width */
-    top: 50%; /* Keep it centered */
-  }
-}
-
-@media (max-width: 26.25em) {
-  .s-box {
-    width: 85vw; /* Slightly larger width for small screens */
-    top: 50%; /* Keep it above the title */
-  }
-}
-
-@media (max-width: 21em) {
-  .s-box {
-    width: 95vw; /* Slightly larger width */
-    padding: calc(1rem * 0.25); /* Reduce padding by 25% */
-    top: 50%; /* Keep it centered */
-  }
+  display: block; /* Ensure it's a block element */
+  margin: 0 auto; /* Center it horizontally */
+  text-align: center; /* Center text within the button */
 }
 
 .stars::before,
@@ -158,13 +94,6 @@ body {
   animation: blink 2s infinite ease-in-out alternate;
 }
 
-.scorpio-image-container,
-.const-image-container {
-  position: absolute;
-  transform: translateY(-50%);
-  z-index: 5;
-}
-
 .scorpio-image {
   width: 25%;
   position: absolute;
@@ -189,7 +118,7 @@ body {
 
 .scorpio-image-container {
   left: 5vw;
-  top: 45vh;
+  top: 50vh;
   z-index: 15;
 }
 
@@ -241,8 +170,104 @@ body {
   transform: scale(2);
 }
 
-@media(max-width:800px){
-  .scorpio-image-container, .const-image-container{
+@media (max-width: 800px) {
+  .scorpio-image-container,
+  .const-image-container {
     display: none;
   }
+}
+
+label {
+  font-weight: 600;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #272a29;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  font-size: 16px;
+}
+
+.stars,
+.sec-color,
+.tert-color,
+.quart-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.stars {
+  color: white;
+  opacity: 1;
+  z-index: 3;
+}
+
+.sec-color {
+  background-image: url("https://live.staticflickr.com/65535/52259221868_53dae692b6_h.jpg");
+  opacity: 0.07;
+  z-index: 1;
+}
+
+.tert-color {
+  background-image: url("https://wallpapers.com/images/hd/constellations-6002-x-3737-wallpaper-1o6h61txs9ts5suw.jpg");
+  opacity: 0.05;
+  z-index: 2;
+}
+
+.quart-color {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/154/97/280/nebula-4k-ultra-hd-wallpaper-preview.jpg");
+  background-size: cover;
+  opacity: 0.03;
+  z-index: 2;
+}
+
+.s-box button:hover {
+  background-color: white;
+  border: 2px solid black;
+}
+
+.s-box button:focus {
+  outline: none;
+  box-shadow: 0 0 1rem rgb(167, 137, 4);
+}
+
+@media (max-width: 48em) {
+  .s-box {
+    width: 75vw;
+    padding: calc(1rem * 0.75);
+    top: 50%;
+  }
+}
+
+@media (max-width: 40.625em) {
+  .s-box {
+    width: 70vw;
+    top: 50%;
+  }
+}
+
+@media (max-width: 26.25em) {
+  .s-box {
+    width: 85vw;
+    top: 50%;
+  }
+}
+
+@media (max-width: 21em) {
+  .s-box {
+    width: 95vw;
+    padding: calc(1rem * 0.25);
+    top: 50%;
+  }
+}
+
+label {
+  font-weight: 600;
 }
