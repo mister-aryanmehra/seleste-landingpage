@@ -391,3 +391,115 @@ body {
 button:hover {
   border: 2px solid white;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #272a29;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  font-size: 16px;
+}
+
+.stars,
+.sec-color,
+.tert-color,
+.quart-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.stars {
+  color: white;
+  opacity: 1;
+  z-index: 3;
+}
+
+.sec-color {
+  background-image: url("https://live.staticflickr.com/65535/52259221868_53dae692b6_h.jpg");
+  opacity: 0.07;
+  z-index: 1;
+}
+
+.tert-color {
+  background-image: url("https://wallpapers.com/images/hd/constellations-6002-x-3737-wallpaper-1o6h61txs9ts5suw.jpg");
+  opacity: 0.05;
+  z-index: 2;
+}
+
+.quart-color {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/154/97/280/nebula-4k-ultra-hd-wallpaper-preview.jpg");
+  background-size: cover;
+  opacity: 0.03;
+  z-index: 2;
+}
+
+.title {
+  width: 100%;
+  max-width: 18rem; /* Control title size */
+}
+
+.s-box {
+  background-color: black;
+  position: absolute;
+  z-index: 10;
+  top: 60%; /* Adjusted from 55% to ensure space from title */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+  border-radius: 0.9375rem;
+  width: 80vw; /* Fluid width */
+  max-width: 25rem; /* Control max width */
+  box-shadow: 0 0 1.25rem rgba(0, 68, 105, 0.5);
+}
+
+.s-box input {
+  background-color: #202020;
+  color: #e0e0e0;
+  padding: 0.625rem;
+  border: none;
+  border-radius: 0.3125rem;
+  width: 100%;
+  font-size: 0.6rem;
+}
+
+.s-box button {
+  margin-top: 0.625rem;
+  padding: 1rem;
+  width: 50%;
+  background-color: #004466;
+  border: none;
+  border-radius: 0.3125rem;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 48em) {
+  .s-box {
+    top: 65%; /* Adjust positioning for smaller screens */
+  }
+}
+
+@media (max-width: 40.625em) {
+  .s-box {
+    width: 90vw; /* More fluid width */
+    top: 60%; /* Adjust positioning further */
+  }
+}
+
+@media (max-width: 26.25em) {
+  .s-box {
+    width: 95vw; /* Full width on very small screens */
+    top: 55%; /* Further adjust positioning */
+  }
+}
